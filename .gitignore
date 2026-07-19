@@ -1,0 +1,3 @@
+**/build/
+**/minted-caches/
+*.synctex.gz
