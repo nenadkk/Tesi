@@ -2,38 +2,71 @@
 \label{chap:descrizione-stage}
 
 \section{Il metodo di lavoro}
+\noindent
 In questa sezione parlo del metodo che ho adottato durante l'attività di stage per organizzare il lavoro e confrontarmi con il mi tutor.
+
 \section{Le tecnologie utilizzate}
+\noindent
 In questa sezione descrivo quali tecnologie e strumenti (\cor{software} e \cor{hardware}) ho utilizzato per la progettazione e sviluppo del progetto.
+
 \section{Analisi}
+\noindent
 In questa sezione spiego il problema che sono andato ad affrontare e spiego la teoria che ci sta dietro.
 Nel particolare parlo dei principali protocolli utilizzati, spingendomi nel dettaglio quanto basta perché si possa comprendere più facilmente le sezioni successive.
-
+Oltre a ciò spiegherò la teoria che sta dietro i test implementati, motivando il loro scopo in relazione all'obiettivo del progetto.
 
 \section{Progettazione}
-\subsection{Introduzione}
-Breve sezione di introduzione sull'architettura del progetto nel suo complesso.
-\subsection{Le classi \cor{`Target`}}
-In questa sezione spiego come ho rappresentato i dispositivi \cor{target} sui quali verranno lanciati i controlli di sicurezza.
-\subsection{Le classi \cor{`Test`}'}
-In questa sezione spiego come ho rappresentato i test da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \cor{refactoring}.
-\subsection{Creazione ed esecuzione}
-In questa sezione spiego i servizi che si occupano della creazione e l'esecuzione delle classi di test.
-\subsection{Persistenza}
-In questa sezione spiego i servizi utilizzati per implementare uno storico dei test che conservi anche i risultati di quest'ultimi.
-\subsection{ \cor{API} }
-In questa sezione spiego gli \cor{endpoint} messi a disposizione dall'\cor{API} implementata per accedere ai servizi del \cor{framework}.
-\subsection{ \cor{Frontend} }
-In questa sezione spiego il ruolo del \cor{frontend} come applicazione dimostrativa.
 
-\section{Il \cor{setup} delle schede}
-In questa sezione spiego il ruolo delle due schede usate come \cor{target}.
+\subsection{Introduzione}
+\noindent
+Breve sezione di introduzione sull'architettura del progetto nel suo complesso.
+
+\subsection{Le classi \cor{`Target`}}
+\noindent
+In questa sezione spiego come ho rappresentato i dispositivi \cor{target} sui quali verranno lanciati i controlli di sicurezza.
+
+\subsection{Le classi \cor{`Test`}'}
+\noindent
+In questa sezione spiego come ho rappresentato i test da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \cor{refactoring}.
+Questa parte riprende diversi concetti di §3.3, o per meglio dire ne rappresenta l'applicazione concreta all'interno del progetto.
+
+\subsection{Creazione ed esecuzione}
+\noindent
+In questa sezione spiego i servizi che si occupano della creazione e l'esecuzione delle classi di test.
+La creazione comprende una classe \cor{factory} e un \cor{pattern registry}; l'esecuzione comprende un \cor{service} per l'esecuzione del singolo test e un altro per la gestione di più test eseguiti in serie.
+In merito a quest'ultimo parlerò anche della soluzione adottata per tenere traccia del \cor{context} che permette ai test di prendere in \cor{input} il risultato dei test eseguiti in precedenza.
+
+\subsection{Persistenza}
+\noindent
+In questa sezione spiego i servizi utilizzati per implementare uno storico dei test che conservi anche i risultati di quest'ultimi.
+Descriverò il \cor{service} addetto alla persistenza e il \cor{pattern repository} che interagisce con il \cor{database SQLite}, motivando la scelta di quest'ultimo rispetto a un tradizionale \cor{DBMS}.
+
+\subsection{ \cor{API} }
+\noindent
+In questa sezione spiego gli \cor{endpoint} messi a disposizione dall'\cor{API} implementata per accedere ai servizi del \cor{framework}.
+
+\subsection{ \cor{Frontend} }
+\noindent
+In questa sezione spiego il ruolo del \cor{frontend} come applicazione dimostrativa.
+È un punto un po' fuorviante, in quanto il senso del frontend è quello di dimostrare l'estendibilità del progetto ad altre componenti che non abbiano diretto accesso alla logica interna del \cor{framework}.
+
 \section{Programmazione}
+\noindent
 In questa sezione parlo della stesura del codice ed eventuali difficoltà/incoerenze rispetto alla progettazione che ho incontrato.
+Parto parlando prima dello sviluppo in \cor{Python} del \cor{framwork} e successivamente mi soffermo sullo sviluppo del \cor{firmware} in \cor{C}.
+
 \section{Verifica e validazione}
+\noindent
 In questa sezione parlo dei controlli effettuati per verificare la correttezza del codice.
+Mi soffermo sul motivare perché si non ho puntato a un alta copertura di codice e su quali punti mi sono concentrato.
+
 \section{I risultati conseguiti}
-In questa sezione discuto i risultati raggiunti sul piano qualitativo che su quello quantitativo.
+\noindent
+In questa sezione discuto i risultati raggiunti sul piano qualitativo che su quello quantitativo, specificando i prodotti \cor{software} e di documentazione che sono risultati alla fine del progetto.
+Faccio poi una presentazione del progetto completo nel suo insieme, discutendone i diversi tipi di utilizzi che se ne possono fare dal punto di vista di un utente esterno.
 
 \section{Migliorie possibili}
-In questa sezione parlo di possibili migliorie che scoperto riguardando il progetto in fase di revisione.
+\noindent
+In questa sezione parlo di possibili migliorie che scoperto riguardando il progetto una volta finito.
+Cerco di dare una mia valutazione alle componenti del prodotto in relazione all'impegno che è servito per realizzarle, ne riconosco le limitazioni, spiego su cosa mi concentrerei se dovessi continuare a lavorarci.
+Discuto inoltre se vi sono scelte che farei diversamente se dovessi ricominciare da zero il progetto.
