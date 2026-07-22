@@ -1,0 +1,3 @@
+- Troppo spazio prima dei titoli dei capitoli 
+- Parole tagliate invece di andare a capo
+-
