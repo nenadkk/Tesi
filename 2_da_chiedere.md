@@ -1,0 +1,1 @@
+- chiedere a tobia se si può aggiungere qualcosa nel punto analisti software in §1.2
