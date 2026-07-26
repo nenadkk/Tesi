@@ -91,11 +91,6 @@ Esaurito il numero di \cor{sprint} a disposizione, il cliente può decidere se p
 Nella stessa maniera viene gestito anche un eventuale piano di manutenzione e aggiornamento del prodotto.\\\\
 A questo metodo di gestione del lavoro si legano poi anche altri processi aziendali, che non necessariamente sono coinvolti direttamente nell'evoluzione del prodotto, ma hanno la loro significativa rilevanza sia nella visione del progetto come sua intero, sia a livello di organizzazione aziendale.
 
-
-
-
-
-
 \section{I clienti}
 \iffalse
 In questa sezione descrivo il tipo di clientela a cui si interfaccia l'azienda, descrivendo i diversi tipi di relazione azienda-cliente che ci possono essere.
@@ -119,12 +114,82 @@ Nelle altre casistiche ha invece modo o di essere coinvolta direttamente con tut
     \caption{\centering Schema che rappresenta la differenza di interazioni tra i clienti in ambito \cor{automotive} e quelli in ambito industriale generale}
     \vspace{0.1cm}
 \end{figure}
+
+
 \section{Lo \cor{stack} tecnologico aziendale}
 \iffalse
 In questa sezione parlo di quali sono le tecnologie utilizzate maggiormente all'interno dell'azienda sia in ambito di sviluppo che di processi organizzativi.
 \fi
 \noindent
+Gli anni di attività hanno portato \cor{Bluewind} a prendere confidenza con diverse tecnologie e strumenti, che spaziano in vari casi di utilizzo.
+La loro adozione tuttavia è fortemente influenzata dalle richieste del cliente.
+Difatti, \cor{Bluewind} tende a non avere uno \cor{standard} fisso su quali strumenti utilizzare, e si rifà molto a quello che viene utilizzato dall'azienda cliente.
+Questo avviene perché lavorando a stretto contatto con i propri clienti, e i rispettivi team di sviluppo, spesso su progetti già avviati, è necessario per \cor{Bluewind} allinearsi con il metodo di lavoro del cliente.
+Spesso tale scelta è motivata anche dal fatto che il prodotto finale comprende anche il codice sorgente, il quale rimane al cliente che potrebbe volerci lavorare ulteriormente in futuro.\\\\
+\noindent
+Nonostante questa dinamica, vi sono delle tecnologie che a cui ricorrono con maggiore frequenza o alle quali, in mancanza di specifiche richieste, preferiscono affidarsi.
+
+%sviluppo
+\subsection{Il linguaggio \cor{C}}
+\noindent
+Il linguaggio \cor{C} rimane il linguaggio dominante nel settore \cor{embedded}, in quanto offre un controllo quasi diretto sull'\cor{hardware} (registri, memoria, interrupt) mantenendo comunque un livello di astrazione superiore all'\cor{Assembly}.
+Su microcontrollori con risorse limitate (specialmente in termini di memoria, si parla anche pochi \cor{kilobyte} di \cor{RAM}) non c'è modo di adottare linguaggi più moderni con funzionalità più complesse come il \cor{garbage collector} o l'\cor{overhead}, occorre invece qualcosa che offrà prevedibilità nei tempi di esecuzione e controllo esplicito sull'allocazione.
+Su questo tema il linguaggio \cor{C} rimane ancora oggi il punto di riferimento per il settore.
+Va detto però che questo controllo è anche notoriamente il suo punto debole: niente \cor{memory safety} nativa, puntatori pericolosi, comportamenti \cor{undefined} sono rischi che negli ambiti \cor{safety-critical} (come quello \cor{automotive}, o medico) vanno trattati con assoluto riguardo.\\
+Nel capitolo successivo parlerò più a fondo delle regole \cor{MISRA} che rappresentano un'importante \cor{standard} per limitare gli errori più comuni.
+
+
+\subsection{Il linguaggio \cor{Assembly}}
+\noindent
+Seppur non accada con grande frequenza, il \cor{C} a volte non è sufficiente, e si rende necessaria l'adozione del linguaggio \cor{Assembly} per raggiungere il livello di controllo richiesto.
+L'\cor{Assembly} resta il linguaggio più basso disponibile nell'\cor{embedded}, avendo una corrispondenza vicina all'uno a uno con le istruzioni macchina dell'architettura.
+Quindi viene utilizato quando serve controllo assoluto sull'\cor{hardware}, accesso a istruzioni specifiche non esposte dal \cor{C} o un'ottimizzazione estrema di alcune funzioni critiche.
+
+
+\subsection{Strumenti proprietari di aziende \cor{partner} come \cor{Infineon} e \cor{ST}}
+\noindent
+Nell'ambito \cor{embedded} è spesso richiesto l'utilizzo di componenti \cor{hardware} costruite su misura per il loro caso di applicazione.
+Ne consegue che, di progetto in progetto, ogni dispositivo per cui andrà sviluppato il \cor{software} sia leggermente diverso, per le componenti (connettori, microprocessori, adattatori ecc.) di cui è composto.
+Per questo motivo, le aziende fornitrici di \cor{hardware} come \cor{Infineon Technologies} e \cor{STMicroelectronics} (da notare che questi sono i \cor{brand} che io ho avuto modo di conoscere nella mia, relativamente breve, esperienza, tuttavia lo stesso ragionamento si applica anche ad altri \cor{partner} aziendali) mettono a disposizione delle schede che racchiudono un insieme predefinito di componenti che possono essere presenti nei dispositivi finali.
+In questo modo le azienda produttrici di \cor{software} possono utilizzare le singole componenti di loro interesse, senza avere ancora a disposizione i dispositivi \cor{hardware} definitivi.
+Questo semplifica lo sviluppo, rendendo più semplice per i programmatori ottenere un \cor{feedback} sul funzionamento del codice.\\\\
+\noindent
+Oltre alle schede, le aziende produttrici mettono a disposizione un gran catalogo di risorse per agevolarne l'utilizzo e la scrittura del codice, quali documentazione dettagliata sui prodotti, \cor{IDE} specifici per il tipo di scheda e altri \cor{tools} di monitoraggio e \cor{debugging}.
+
+\subsection{\cor{Gitlab}}
+\noindent
+\cor{GitLab} è una piattaforma che integra in un unico strumento la gestione del codice sorgente, il controllo di versione basato su \cor{Git}, l'integrazione e distribuzione continua (\cor{CI/CD}), e la gestione dei progetti.
+Si distingue inoltre da altre piattaforme concorrenti per la presenza di una versione \cor{self-hosted}, rendendola particolarmente apprezzata da aziende con esigenze specifiche di sicurezza e controllo sui propri dati.\\\\
+Come ci si può aspettare, \cor{Bluewind} adotta questo strumento integrandolo all'interno dei propri \cor{server}, e rendendolo un elemento centrale all'interno della sua organizzazione aziendale.
+Questo strumento si integra molto bene con il metodo \cor{Agile} adottato dall'azienda, permettendo di organizzare, suddividere e tenere traccia delle attività in maniera più organizzata e meticolosa.
+
+\subsection{\cor{StrictDoc}}
+\noindent
+\cor{StrictoDoc} è uno strumento gratuito e \cor{open source} utilizzato per la scrittura di documentazione.
+Viene adottato specialmente per l'analisi dei requisiti in quanto permette di fare più facilmente riferimento tra i requisiti e al codice, di creare la matrice di tracciabilità e di esportare la documentazione in altri formati, anche quelli usati da \cor{tools} proprietari.
+È uno strumento su cui \cor{Bluewind} sta puntando molto per via della sua semplicità di utilizzo e della possibilità, in quanto \cor{open source} di aggiunge funzionalità \cor{custom} in base alla propria esigenza.
+
+\iffalse
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=\textwidth]{img/strictdoc_screen.png}}
+    \caption{\centering Schermata del \cor{Project Index} di un progetto, preso dalla presentazione ufficiale di \cor{StrictDoc}}
+    \vspace{0.1cm}
+\end{figure}
+\fi
+%test
+\subsection{\cor{PC-lint}}
+\noindent
+\cor{PC-lint} è uno strumento di analisi statica per \cor{C} e \cor{C++} utilizzato in ambienti \cor{safety-critical} per scoprire \cor{bug}, vulnerabilità e verificare il rispetto delle regole imposte dagli \cor{standar}, tra cui anche le regole \cor{MISRA}.\\
+È uno strumento \cor{CLI} e può essere integrato all'interno in un processo automatizzato di test e \cor{deployment}.
+
+\subsection{Servizi e strumenti proprietari}
+\noindent
+Oltre ad affidarsi a tecnologie e strumenti esterni, \cor{Bluewind} ha una sua \cor{suite} di strumenti proprietari per la gestioni dei suoi processi interni.
+Lo scopo principale è quello di offrire servizi che agevolino alcuni compiti : l'organizzazione tra il personale, controllare la disponibilità dei vari dipendenti, organizzare incontri, gestire lo \cor{smart working}, oppure, andando più sul tecnico, permettere di accedere da remoto a dispositivi \cor{hardware} condivisi tra più utenti e utili allo sviluppo.
 
 \section{Propensione all'innovazione}
-\noindent
+\iffalse
 In questa sezione spiego come l'azienda si rivolge al tema dell'innovazione e quali metodi/processi segue per inseguire tale fine.
+\fi
+\noindent

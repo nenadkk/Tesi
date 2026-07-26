@@ -45,7 +45,9 @@ Servizi proprietari dell'azienda per gestire tempo di disponibilità di ogni per
 Si definiscono le attività e si tracciano con gitlab board. 
 
 Progettazione:
-  - ADR in base ai clienti viene richiesto di usare strumenti, formati differenti (strumenti per gestione di requisit tipo doors, polarion). Si punta su strictdoc, open source, semplice, gratuito e permette di esportare nei formati usati da altri tool proprietari, essendo open-s lo si può eventualmente customizzare, permette di fare più facilmente riferimento tra i requisiti e al codice e di creare la matrice di tracciabilità.
+  - ADR in base ai clienti viene richiesto di usare strumenti, formati differenti (strumenti per gestione di requisit tipo doors, polarion). 
+  - Si punta su strictdoc, open source, semplice, gratuito e permette di esportare nei formati usati da altri tool proprietari, essendo open-s lo si può eventualmente customizzare, permette di fare più facilmente riferimento tra i requisiti e al codice e di creare la matrice di tracciabilità.
+  
 
   
 Testing:
