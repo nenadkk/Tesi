@@ -57,7 +57,7 @@ Testing:
 ## Propensione all'innovazione 
 Propensione azienda per innovazione
   - impegno sentito, molte difficoltà dovute alle normative.
-  - Poco ML perché non regolamentato e prevedibile in un contesto dove il comportamento deve essere assicurato.
+  - Poco ML perché non regolamentato e imprevedibile in un contesto dove il comportamento deve essere assicurato.
 
 # CAPITOLO 2 - Descrizione del tirocinio
 ## La spinta normativa
