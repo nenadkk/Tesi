@@ -16,18 +16,84 @@
     name={Embedded},
     text={embedded},
     sort={Embedded},
-    description={Indica un sistema integrato hardware-software progettato per svolgere una funzione specifica e dedicata all'interno di un dispositivo. I sistemi \cor{embedded} operano tipicamente con risorse limitate (CPU, memoria, energia) e in ambiti come: centraline auto, elettrodomestici, dispositivi IoT, wearable e strumentazione medica.}
+    description={Indica un sistema integrato hardware-software progettato per svolgere una funzione specifica e dedicata all'interno di un dispositivo. I sistemi \textit{embedded} operano tipicamente con risorse limitate (CPU, memoria, energia) e in ambiti come: centraline auto, elettrodomestici, dispositivi \textit{IoT}, wearable e strumentazione medica}
 }
 \newglossaryentry{func_saf_g}{
     name={Functional Safety},
     text={Functional Safety},
     sort={Functional Safety},
-    description={Ramo della sicurezza che si occupa di garantire il corretto comportamento di un sistema o uno strumento in seguito al cambiamento dei parametri di \cor{input}, o al verificarsi di errori e/o guasti \cor{hardware}.}
+    description={Ramo della sicurezza che si occupa di garantire il corretto comportamento di un sistema o uno strumento in seguito al cambiamento dei parametri di \textit{input}, o al verificarsi di errori e/o guasti \textit{hardware}}
+}
+\newglossaryentry{agile_g}{
+    name={Agile},
+    text={Agile},
+    sort={Agile},
+    description={Approccio alla gestione di progetti e sviluppo \textit{software} basato su cicli iterativi e incrementali, che privilegia flessibilità, collaborazione e adattamento al cambiamento rispetto alla pianificazione rigida.
+    Fondato sui principi dell'Agile Manifesto (2001), promuove il coinvolgimento continuo del cliente, il rilascio frequente di valore funzionante e l'auto-organizzazione dei \textit{team}. \textit{Framework} come \textit{Scrum} e \textit{Kanban} ne rappresentano applicazioni pratiche diffuse}
+}
+\newglossaryentry{scrum_g}{
+    name={Scrum},
+    text={Scrum},
+    sort={Scrum},
+    description={\textit{Framework} che applica i principi \textit{Agile} per la gestione e lo sviluppo di prodotti complessi, organizzato in cicli temporali brevi e a durata fissa chiamati Sprint (tipicamente 1-4 settimane).
+    Una figura chiave è lo \textit{scrum master}, responsabile di facilitare l'adozione e la corretta applicazione del framework Scrum all'interno del team.
+    Egli rimuove ostacoli che rallentano il lavoro, facilita le cerimonie \textit{Scrum} (\textit{Daily, Sprint Planning, Review, Retrospective}) e isola il \textit{team} da interferenze esterne, promuovendo il miglioramento continuo dei processi}
+}
+\newglossaryentry{open_source_g}{
+    name={Open Source},
+    text={open source},
+    sort={Open Source},
+    description={Prodotto \textit{software} in cui il codice sorgente è reso pubblicamente disponibile, consentendo a chiunque di visualizzarlo, modificarlo e ridistribuirlo}
+}
+\newglossaryentry{ml_g}{
+    name={Machine Learning (ML)},
+    text={machine learning},
+    sort={Machine learning},
+    description={Branca dell'intelligenza artificiale che studia algoritmi capaci di apprendere pattern dai dati, migliorando le proprie prestazioni su un compito senza essere esplicitamente programmati per eseguirlo}
 }
 %####################################################################################
 % ELENCO ACRONIMI
 %####################################################################################
-
+\newacronym{ReD}{R\&D}{Research and Development}
+\newacronym{po}{PO}{Product Owner}
+\newacronym{OEM}{OEM}{Original Equipment Manufacturer}
+\newacronym{misra}{MISRA}{Motor Industry Software Reliability Association}
+\glsunset{misra}
+\newacronym{IDE}{IDE}{Integrated Development Environment}
+\glsunset{IDE}
+\newacronym{ci_cd}{CI/CD}{Continuous Integration/Continuous Delivery}
+\glsunset{ci_cd}
+\newacronym{cli}{CLI}{Command Line Interface}
+\glsunset{cli}
 %####################################################################################
 % GLOSSARIO ESTESO DEGLI ACRONIMI
 %####################################################################################
+
+\newglossaryentry{po_ext}{
+    name={Product Owner},
+    text={PO},
+    sort={Product Owner},
+    description={Figura chiave nei metodo \textit{Agile}, responsabile di massimizzare il valore del prodotto sviluppato dal \textit{team}.
+    Definisce la visione del prodotto, gestisce e prioritizza le attività, e traduce le esigenze di \textit{stakeholder} e clienti in requisiti chiari per il team. I suoi compiti possono variare in base all'organizzazione della realtà in cui si trova, andando a sovrapporsi in parte con quelli del \textit{Project Manager}}
+}
+\newglossaryentry{misra_ext}{
+    name={MISRA},
+    text={MISRA},
+    sort={MISRA},
+    description={Organizzazione che pubblica linee guida di programmazione (principalmente per C e C++) volte a migliorare sicurezza, affidabilità e portabilità del codice, soprattutto in ambito \textit{automotive} ed \textit{embedded/safety-critical}.
+    Gli \textit{standard MISRA} definiscono regole e \textit{best practice} per evitare costrutti ambigui o pericolosi del linguaggio, e sono spesso richiesti in contesti normativi o di certificazione}
+}
+\newglossaryentry{IDE_ext}{
+    name={IDE},
+    text={IDE},
+    sort={IDE},
+    description={Ambiente di Sviluppo Integrato, \textit{software} che riunisce in un'unica interfaccia gli strumenti necessari alla scrittura di codice}
+}
+\newglossaryentry{ci_cd_ext}{
+    name={CI/CD (Continuous Integration/Continuous Delivery)},
+    text={CI/CD},
+    sort={CI/CD},
+    description={Pratica \textit{DevOps} che automatizza le fasi di integrazione, test e rilascio del \textit{software}.
+    La \textit{Continuous Integration} prevede l'unione frequente del codice in un \texit{repository} condiviso con \textit{build} e test automatici, per individuare errori precocemente.
+    La \texit{Continuous Delivery/Deployment} estende il processo automatizzando il rilascio in produzione, riducendo tempi e rischi legati alle \textit{release} manuali}
+}

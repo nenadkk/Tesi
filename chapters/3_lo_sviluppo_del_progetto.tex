@@ -8,7 +8,7 @@ In questo punto parlo del metodo di lavoro che ho adottato durante l'attività d
 
 \subsection{Le tecnologie utilizzate}
 \noindent
-In questo punto descrivo quali tecnologie e strumenti (\cor{software} e \cor{hardware}) ho utilizzato per la progettazione e sviluppo del progetto.
+In questo punto descrivo quali tecnologie e strumenti (\textit{software} e \textit{hardware}) ho utilizzato per la progettazione e sviluppo del progetto.
 
 \section{Analisi}
 \noindent
@@ -22,39 +22,39 @@ Oltre a ciò spiegherò la teoria che sta dietro i test implementati, motivando 
 \noindent
 Breve sezione di introduzione sull'architettura del progetto nel suo complesso.
 
-\subsection{Le classi \cor{`Target`}}
+\subsection{Le classi \textit{`Target`}}
 \noindent
-In questa sezione spiego come ho rappresentato i dispositivi \cor{target} sui quali verranno lanciati i controlli di sicurezza.
+In questa sezione spiego come ho rappresentato i dispositivi \textit{target} sui quali verranno lanciati i controlli di sicurezza.
 
-\subsection{Le classi \cor{`Test`}'}
+\subsection{Le classi \textit{`Test`}'}
 \noindent
-In questa sezione spiego come ho rappresentato i test da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \cor{refactoring}.
+In questa sezione spiego come ho rappresentato i test da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \textit{refactoring}.
 Questa parte riprende diversi concetti di §3.3, o per meglio dire ne rappresenta l'applicazione concreta all'interno del progetto.
 
 \subsection{Creazione ed esecuzione}
 \noindent
 In questa sezione spiego i servizi che si occupano della creazione e l'esecuzione delle classi di test.
-La creazione comprende una classe \cor{factory} e un \cor{pattern registry}; l'esecuzione comprende un \cor{service} per l'esecuzione del singolo test e un altro per la gestione di più test eseguiti in serie.
-In merito a quest'ultimo parlerò anche della soluzione adottata per tenere traccia del \cor{context} che permette ai test di prendere in \cor{input} il risultato dei test eseguiti in precedenza.
+La creazione comprende una classe \textit{factory} e un \textit{pattern registry}; l'esecuzione comprende un \textit{service} per l'esecuzione del singolo test e un altro per la gestione di più test eseguiti in serie.
+In merito a quest'ultimo parlerò anche della soluzione adottata per tenere traccia del \textit{context} che permette ai test di prendere in \textit{input} il risultato dei test eseguiti in precedenza.
 
 \subsection{Persistenza}
 \noindent
 In questa sezione spiego i servizi utilizzati per implementare uno storico dei test che conservi anche i risultati di quest'ultimi.
-Descriverò il \cor{service} addetto alla persistenza e il \cor{pattern repository} che interagisce con il \cor{database SQLite}, motivando la scelta di quest'ultimo rispetto a un tradizionale \cor{DBMS}.
+Descriverò il \textit{service} addetto alla persistenza e il \textit{pattern repository} che interagisce con il \textit{database SQLite}, motivando la scelta di quest'ultimo rispetto a un tradizionale \textit{DBMS}.
 
-\subsection{ \cor{API} }
+\subsection{ \textit{API} }
 \noindent
-In questa sezione spiego gli \cor{endpoint} messi a disposizione dall'\cor{API} implementata per accedere ai servizi del \cor{framework}.
+In questa sezione spiego gli \textit{endpoint} messi a disposizione dall'\textit{API} implementata per accedere ai servizi del \textit{framework}.
 
-\subsection{ \cor{Frontend} }
+\subsection{ \textit{Frontend} }
 \noindent
-In questa sezione spiego il ruolo del \cor{frontend} come applicazione dimostrativa.
-È un punto un po' fuorviante, in quanto il senso del frontend è quello di dimostrare l'estendibilità del progetto ad altre componenti che non abbiano diretto accesso alla logica interna del \cor{framework}.
+In questa sezione spiego il ruolo del \textit{frontend} come applicazione dimostrativa.
+È un punto un po' fuorviante, in quanto il senso del frontend è quello di dimostrare l'estendibilità del progetto ad altre componenti che non abbiano diretto accesso alla logica interna del \textit{framework}.
 
 \section{Programmazione}
 \noindent
 In questa sezione parlo della stesura del codice ed eventuali difficoltà/incoerenze rispetto alla progettazione che ho incontrato.
-Parto parlando prima dello sviluppo in \cor{Python} del \cor{framwork} e successivamente mi soffermo sullo sviluppo del \cor{firmware} in \cor{C}.
+Parto parlando prima dello sviluppo in \textit{Python} del \textit{framwork} e successivamente mi soffermo sullo sviluppo del \textit{firmware} in \textit{C}.
 
 \section{Verifica e validazione}
 \noindent
@@ -64,7 +64,7 @@ Mi soffermo sul motivare perché si non ho puntato a un alta copertura di codice
 \section{Resoconto del lavoro svolto}
 \subsection{I risultati conseguiti}
 \noindent
-In questa sezione discuto i risultati raggiunti sul piano qualitativo che su quello quantitativo, specificando i prodotti \cor{software} e di documentazione che sono risultati alla fine del progetto.
+In questa sezione discuto i risultati raggiunti sul piano qualitativo che su quello quantitativo, specificando i prodotti \textit{software} e di documentazione che sono risultati alla fine del progetto.
 Faccio poi una presentazione del progetto completo nel suo insieme, discutendone i diversi tipi di utilizzi che se ne possono fare dal punto di vista di un utente esterno.
 
 \subsection{Migliorie possibili}

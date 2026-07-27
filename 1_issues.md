@@ -1,3 +1,3 @@
 - Troppo spazio prima dei titoli dei capitoli 
 - Parole tagliate invece di andare a capo
--
+- Da mettere il riferimento in bibliografia al manifesto agile
