@@ -11,8 +11,10 @@ Descrivo le loro aree di mercato e il tipo di progetti dei quali si occupano.}\\
 \fi
 \noindent
 Fondata nel 1998, \textit{Bluewind} è un'azienda informatica specializzata nel campo dei sistemi \gls{embedded_g} e della sicurezza informatica.
-Per \textit{embedded} si intendono sistemi integrati, dalle risorse limitate, d'uso comune in varie applicazioni che richiedono componenti specifiche e che svolgano poche operazioni in modo efficiente.\\
-\textit{Bluewind} si occupa sia dello sviluppo di prodotti \textit{software} per aziende nell'ambito industriale, medico e dell'\textit{automotive}, sia di fornire ad altre aziende servizi nell'ambito della sicurezza informatica e della \gls{func_saf_g} (quest'ultima verrà approfondita in seguito).\\\\
+Per \textit{embedded} si intendono sistemi elettronici, dalle risorse limitate (sia come memoria che come potenza di calcolo), d'uso comune in varie applicazioni che richiedono soluzioni, \textit{hardware} e \textit{software}, su misura, e che svolgano poche operazioni specifiche in modo efficiente.
+Si integrano solitamente in sistemi più ampi e complessi, che possono coinvolgere sia altri dispositivi elettronici che componenti meccaniche in movimento, spesso con il compito di mettere in comunicazione altri dispositivi con il mondo esterno, ricevendo dati e mandando comandi.\\
+\textit{Bluewind} si occupa sia dello sviluppo di prodotti \textit{software} per aziende nell'ambito industriale, medico e dell'\textit{automotive}, sia di fornire ad altre aziende servizi nell'ambito della sicurezza informatica e della \gls{func_saf_g} (quest'ultima verrà approfondita più nel dettaglio nel \hyperlink{ref:spiegazione_fun_saf}{terzo paragrafo} di questa sezione).\\\\
+
 \noindent
 Dal punto di vista dello sviluppo \textit{software}, gli anni di esperienza nel settore hanno permesso all'azienda di accumulare un bagaglio di conoscenze e competenze che, ad oggi, gli permette di occuparsi dell'intero ciclo di vita di un prodotto.
 L'azienda infatti non si occupa solo dell'implementazione del codice ma è coinvolta in tutti gli stadi del progetto:
@@ -27,6 +29,7 @@ L'azienda infatti non si occupa solo dell'implementazione del codice ma è coinv
 \end{itemize}
 Occorre tuttavia sottolineare che, in base alle richieste e necessità dei clienti, non necessariamente spetta sempre all'azienda occuparsi di ogni singolo passaggio di questo ciclo di vita.\\
 
+\hypertarget{ref:spiegazione_fun_saf}{}
 \noindent
 Un'aspetto molto importante del settore in cui opera \textit{Bluewind} è la presenza, per molti campi di utilizzo dei prodotti \textit{embedded}, di normative e \textit{standard} da rispettare per soddisfare i requisiti di sicurezza di alcuni settori critici.
 Per questo motivo \textit{Bluewind} ha raccolto al suo interno una significativa conoscenza sulla \textit{functional safety}, arrivando ad offrire servizi di consulenza e di validazione su questo tema ad aziende terze, e riuscendo a fare di questo ambito uno dei suoi principali punti di forza e competitività.\\
@@ -142,7 +145,28 @@ Nonostante questa dinamica, vi sono delle tecnologie che a cui ricorrono con mag
     {\footnotesize Fonte: Elaborazione originale dell'autore\par}
 \end{figure}
 
-%sviluppo
+\subsection{\textit{Gitlab}}
+\noindent
+\textit{GitLab} è una piattaforma che integra in un unico strumento la gestione del codice sorgente, il controllo di versione basato su \textit{Git}, e la gestione dei progetti. Permette inoltre di adottare l'integrazione e distribuzione continua, \gls{ci_cd}, ossia la possibilità di automatizzare il rilascio del \textit{software} e l'avvio di una sequenza di test.
+\noindent
+Come ci si può aspettare, \textit{Bluewind} adotta questo strumento integrandolo all'interno dei propri \textit{server}, e rendendolo un elemento centrale all'interno della sua organizzazione aziendale.
+Questo strumento si integra molto bene con il metodo \textit{agile} adottato dall'azienda, permettendo di organizzare, suddividere e tenere traccia delle attività in maniera più organizzata e meticolosa.
+
+\subsection{Servizi e strumenti proprietari}
+\noindent
+Oltre ad affidarsi a tecnologie e strumenti esterni, \textit{Bluewind} ha una sua \textit{suite} di strumenti proprietari per la gestioni dei suoi processi interni.
+Lo scopo principale è quello di offrire servizi che agevolino alcuni compiti : l'organizzazione tra il personale, controllare la disponibilità dei vari dipendenti, organizzare incontri, gestire lo \textit{smart working}, oppure, andando più sul tecnico, permettere di accedere da remoto a dispositivi \textit{hardware} condivisi tra più utenti e utili allo sviluppo.
+Quindi, seppur questi servizi non siano necessariamente coinvolti in maniera diretta nell'evoluzione del progetto, la loro presenza è importante per facilitare il coordinamento dei processi principali, e per garantire che il loro svolgimento sia più fluido.
+
+
+\subsection{\textit{StrictDoc}}
+\noindent
+\textit{StrictoDoc} è uno strumento utilizzato per la scrittura di documentazione, gratuito e \gls{open_source_g}(ovvero il cui codice è pubblicamente disponibile e modificabile liberalmente dall'utente).
+Viene adottato specialmente per l'analisi dei requisiti in quanto permette di fare più facilmente riferimento tra i requisiti e al codice, di creare la matrice di tracciabilità e di esportare la documentazione in altri formati, anche quelli usati da \textit{tools} proprietari.
+La possibilità di associare documentazione direttamente al codice di interesse lo rende uno strumento ampiamente adottato anche dai programmatori, sia per indicare dove vengono implementati i requisiti, sia per aggiungere chiarezza sul lavoro svolto laddove necessario.
+È uno strumento su cui \textit{Bluewind} sta puntando molto per via della sua semplicità di utilizzo e della possibilità, in quanto \textit{open source}, di aggiunge funzionalità \textit{custom} in base alle proprie esigenze.
+
+
 \subsection{Il linguaggio \textit{C}}
 \noindent
 Il linguaggio \textit{C} rimane il linguaggio dominante nel settore \textit{embedded}, in quanto offre un controllo quasi diretto sull'\textit{hardware} (registri, memoria, interrupt) mantenendo comunque un livello di astrazione superiore all'\textit{Assembly}.
@@ -150,7 +174,6 @@ Su microcontrollori con risorse limitate (specialmente in termini di memoria, si
 Su questo tema il linguaggio \textit{C} rimane ancora oggi il punto di riferimento per il settore.
 Va detto però che questo controllo è anche notoriamente il suo punto debole: niente \textit{memory safety} nativa, puntatori pericolosi, comportamenti \textit{undefined} sono rischi che negli ambiti \textit{safety-critical} (come quello \textit{automotive}, o medico) vanno trattati con assoluto riguardo.\\
 Nel capitolo successivo parlerò più a fondo delle regole \gls{misra} che rappresentano un'importante \textit{standard} per limitare gli errori più comuni.
-
 
 \subsection{Il linguaggio \textit{Assembly}}
 \noindent
@@ -174,24 +197,7 @@ Questo semplifica lo sviluppo, rendendo più semplice per i programmatori ottene
 \noindent
 Oltre alle schede, le aziende produttrici mettono a disposizione un gran catalogo di risorse per agevolarne l'utilizzo e la scrittura del codice, quali documentazione dettagliata sui prodotti, ambienti di sviluppo (\gls{IDE}) specifici per il tipo di scheda e altri \textit{tools} di monitoraggio e \textit{debugging}.
 
-\subsection{\textit{StrictDoc}}
-\noindent
-\textit{StrictoDoc} è uno strumento utilizzato per la scrittura di documentazione, gratuito e \gls{open_source_g}(ovvero il cui codice è pubblicamente disponibile e modificabile liberalmente dall'utente).
-Viene adottato specialmente per l'analisi dei requisiti in quanto permette di fare più facilmente riferimento tra i requisiti e al codice, di creare la matrice di tracciabilità e di esportare la documentazione in altri formati, anche quelli usati da \textit{tools} proprietari.
-È uno strumento su cui \textit{Bluewind} sta puntando molto per via della sua semplicità di utilizzo e della possibilità, in quanto \textit{open source} di aggiunge funzionalità \textit{custom} in base alla propria esigenza.
 
-\subsection{\textit{Gitlab}}
-\noindent
-\textit{GitLab} è una piattaforma che integra in un unico strumento la gestione del codice sorgente, il controllo di versione basato su \textit{Git}, e la gestione dei progetti. Permette inoltre di adottare l'integrazione e distribuzione continua, \gls{ci_cd}, ossia la possibilità di automatizzare il rilascio del \textit{software} e l'avvio di una sequenza di test.
-\noindent
-Come ci si può aspettare, \textit{Bluewind} adotta questo strumento integrandolo all'interno dei propri \textit{server}, e rendendolo un elemento centrale all'interno della sua organizzazione aziendale.
-Questo strumento si integra molto bene con il metodo \textit{agile} adottato dall'azienda, permettendo di organizzare, suddividere e tenere traccia delle attività in maniera più organizzata e meticolosa.
-
-%test
-\subsection{Servizi e strumenti proprietari}
-\noindent
-Oltre ad affidarsi a tecnologie e strumenti esterni, \textit{Bluewind} ha una sua \textit{suite} di strumenti proprietari per la gestioni dei suoi processi interni.
-Lo scopo principale è quello di offrire servizi che agevolino alcuni compiti : l'organizzazione tra il personale, controllare la disponibilità dei vari dipendenti, organizzare incontri, gestire lo \textit{smart working}, oppure, andando più sul tecnico, permettere di accedere da remoto a dispositivi \textit{hardware} condivisi tra più utenti e utili allo sviluppo.
 
 \section{Propensione all'innovazione}
 \iffalse
