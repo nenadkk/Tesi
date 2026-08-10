@@ -69,6 +69,10 @@
 \newacronym{csms}{CSMS}{Cyber Security Management System}
 \newacronym{IoT}{IoT}{Internet of Things}
 \glsunset{IoT}
+\newacronym{can}{CAN}{Controller Area Network}
+\glsunset{can}
+\newacronym{api}{API}{Application Programming Interface}
+\glsunset{api}
 %####################################################################################
 % GLOSSARIO ESTESO DEGLI ACRONIMI
 %####################################################################################
@@ -106,11 +110,24 @@
     text={PoC},
     sort={PoC},
     description={Proof of Concept, si tratta di un prodotto che ha lo scopo di dimostrare la fattibilità di un progetto andando ad implementare, e mettendo in relazione, diverse tecnologie e idee sulle quali esso si basa.
-    Può successivamente divenatare una base iniziale sulla quale andare a sviluppare il progetto vero e proprio.}
+    Può successivamente divenatare una base iniziale sulla quale andare a sviluppare il progetto vero e proprio}
 }
 \newglossaryentry{cra_ext}{
     name={CRA (Cyber Resilience Act)},
     text={CRA},
     sort={CRA},
     description={}
+}
+\newglossaryentry{can_ext}{
+    name={CAN},
+    text={CAN},
+    sort={CAN},
+    description={Protocollo di comunicazione seriale \textit{multi-master}, utilizzato per la comunicazione tra \textit{ECU (Electronic Control Units)} in ambito \textit{automotive}.
+    Le varie \textit{ECU} sono collegate fisicamente tramite il \textit{CAN bus}, e comunicano mandano messaggi \textit{broadcast} nella rete condivisa}
+}
+\newglossaryentry{api_ext}{
+    name={API},
+    text={API},
+    sort={API},
+    description={Interfaccia che mette a disposizione una serie di servizi tramite cui componenti \textit{software} distinti possono comunicare e scambiarsi dati, senza necessità di conoscere i dettagli implementativi reciproci.}
 }

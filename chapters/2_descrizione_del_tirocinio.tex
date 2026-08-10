@@ -99,8 +99,96 @@ Oltre a ciò, due punti indicati come di particolare interesse da quest'attivit�
 
 
 \section{Gli obiettivi del progetto}
-\noindent
+\iffalse
 In questa sezione descrivo gli obiettivi prefissati con l'azienda da raggiungere durante l'attività di tirocinio.
+\fi
+\noindent
+Prima che iniziassi nel pratico l'esperienza di tirocinio, io e il mio \textit{tutor} aziendale abbiamo definito chiaramente quali fossero gli obiettivi per il progetto nel quale mi sarei cimentato.\\
+
+\subsection{Obiettivi obbligatori}
+\noindent
+Inanzi tutto abbiamo specificato quelli che sarebbero stati gli obiettivi minimi obbligatori.
+Al completamento di questi sarebbe risultato un prodotto molto basilare, il cui sviluppo però mi avrebbe portato a prendere dimestichezza con le tecnologie, e soprattutto ad apprendere le basi teoriche necessarie poi per il proseguimento del progetto.
+Seguono i suddetti obiettivi:
+\begin{itemize}
+    \itemsep0em
+	\item \textbf{\textit{Setup} di un canale di comunicazione \gls{can}}:
+	\textit{CAN} è un protocollo di comunicazione utilizzato nei veicoli per mettere in comunicazione tra loro le varie centraline.
+
+	\item \textbf{Definizione di una struttura che implementi un \textit{test runner}}:
+	mi sono stati consegnati, all'inizio del progetto, degli \textit{script} in linguaggio \textit{Python} contenenti delle funzioni che effettuavano dei \textit{test} di sicurezza.
+	Questo obiettivo prevedeva la creazione di una soluzione \textit{software} che permettesse di lanciare questi \textit{test} tramite il canale \textit{CAN} precedentemente creato.
+    Successivamente questi stessi \textit{script} sono stati la base di partenza da cui ho progettato e sviluppato le classi di \textit{test} (verranno affrontate nel dettaglio nella sezione \ref{dev:classi_test}).
+
+    \item \textbf{Sviluppo di un'\gls{api} per l’esecuzione di test da remoto}:
+    un'\textit{API} è un meccanismo che mette a disposizione dei servizi per far interagire due o più \textit{software}.
+    In questo punto del progetto l'\textit{API} aveva lo scopo di agevolare l'interazione con l'operatore; la sua implementazione è poi progredita arrivando a essere una componente chiave del progetto (ne parlo più nel dettaglio nella sezione \ref{dev:api}).
+\end{itemize}
+
+
+\subsection{Obiettivi desiderabili}
+\noindent
+Abbiamo poi previsto una serie di obiettivi desiderabili, la cui realizzazione ha occupato la maggior parte delle ore previste dall'esperienza.\\
+Completati questi obiettivi, ne sarebbero risultati una libreria che implementasse l'esecuzione dei \textit{test} in tutte le sue parti, e un'applicazione dimostrativa che raggruppasse il tutto in un processo unico.\\
+Seguono i suddetti obiettivi:
+\begin{itemize}
+	\itemsep0em
+	\item \textbf{\textit{Refactoring} dei \textit{test} esistenti}:
+	questo obiettivo prevedeva il riutilizzo del materiale che mi è stato fornito per progettare e implementare i \textit{test} in modo che potessero essere riutilizzati all'interno di un sistema più grande.
+
+	\item \textbf{Sviluppo di un sistema modulare di \textit{test}}:
+	questo obiettivo prevedeva lo sviluppo di un sistema che gestisse il \textit{setup}, l'esecuzione e la conservazione dei \textit{test}.
+	Per fare ciò si è previsto già dall'inizio di utilizzare componenti distinte (e sostituibili) che si occupassero ognuna di un singolo compito specifico.
+
+	\item \textbf{Sviluppo di un'applicazione dimostrativa}:
+	questo obiettivo prevedeva il creare un'applicazione che coordinasse l'insieme di componenti citato nel punto precedente per gestire l'esecuzione dei \textit{test} dall'inizio alla fine.
+	Ho poi deciso, insieme al \textit{tutor}, che l'applicazione sarebbe stata rappresentata dall'\textit{API} stessa.
+\end{itemize}
+
+\subsection{Obiettivi facoltativi}
+Sono stati previsti anche degli obiettivi facoltativi a cui dedicarsi qualora, una volta soddisfatti tutti gli obiettivi obbligatori e desiderati, fosse rimasto del tempo a disposizione.
+
+Tali obiettivi sono lo sviluppo di una interfaccia grafica da cui lanciare i \textit{test}, e lo sviluppo di ulteriori \textit{test} aggiuntivi che si basino su altri protocolli di comunicazione, diversi dal CAN.\\
+Questi obiettivi hanno lo scopo di mostrare se il prodotto ottenuto fino a qual momento sia o meno facilmente espandibile.
+Infatti, l'impegno e il tempo necessari per sviluppare queste funzionalità aggiuntive sarebbero stati il metodo di giudizio per verificare che tutto quanto il progetto sia stato svolto con una qualità apprezzabile.
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+Setup del canale di comunicazione (CAN) ed esecuzione manuale di test;
+Definizione di una struttura per descrivere i test e implementazione di un test runner;
+Sviluppo di API per l’esecuzione di test da remoto;
+Refactoring e modularizzazione del sistema di test;
+Refactoring test esistenti;
+Documentazione e sviluppo di un’applicazione dimostrativa;
+PoC dell’estendibilità del sistema tramite setup di un altro canale di comunicazione (es. UART);
+\fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Le ambizioni personali}
 \noindent
