@@ -14,7 +14,7 @@ In questo punto descrivo quali tecnologie e strumenti (\textit{software} e \text
 \noindent
 In questa sezione spiego il problema che sono andato ad affrontare e spiego la teoria che ci sta dietro.
 Nel particolare parlo dei principali protocolli utilizzati, spingendomi nel dettaglio quanto basta perché si possa comprendere più facilmente le sezioni successive.
-Oltre a ciò spiegherò la teoria che sta dietro i test implementati, motivando il loro scopo in relazione all'obiettivo del progetto.
+Oltre a ciò spiegherò la teoria che sta dietro i \textit{test} implementati, motivando il loro scopo in relazione all'obiettivo del progetto.
 
 \section{Progettazione}
 
@@ -22,31 +22,31 @@ Oltre a ciò spiegherò la teoria che sta dietro i test implementati, motivando 
 \noindent
 Breve sezione di introduzione sull'architettura del progetto nel suo complesso.
 
-\subsection{Le classi \textit{`Target`}}
+\subsection{Le classi `Target'}
 \noindent
 In questa sezione spiego come ho rappresentato i dispositivi \textit{target} sui quali verranno lanciati i controlli di sicurezza.
 
-\subsection{Le classi \textit{`Test`}'} \label{dev:classi_test}
+\subsection{Le classi `Test'} \label{dev:classi_test}
 \noindent
-In questa sezione spiego come ho rappresentato i test da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \textit{refactoring}.
+In questa sezione spiego come ho rappresentato i \textit{test} da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \textit{refactoring}.
 Questa parte riprende diversi concetti di §3.3, o per meglio dire ne rappresenta l'applicazione concreta all'interno del progetto.
 
 \subsection{Creazione ed esecuzione}
 \noindent
 In questa sezione spiego i servizi che si occupano della creazione e l'esecuzione delle classi di test.
-La creazione comprende una classe \textit{factory} e un \textit{pattern registry}; l'esecuzione comprende un \textit{service} per l'esecuzione del singolo test e un altro per la gestione di più test eseguiti in serie.
-In merito a quest'ultimo parlerò anche della soluzione adottata per tenere traccia del \textit{context} che permette ai test di prendere in \textit{input} il risultato dei test eseguiti in precedenza.
+La creazione comprende una classe \textit{factory} e un \textit{pattern registry}; l'esecuzione comprende un \textit{service} per l'esecuzione del singolo \textit{test} e un altro per la gestione di più \textit{test} eseguiti in serie.
+In merito a quest'ultimo parlerò anche della soluzione adottata per tenere traccia del \textit{context} che permette ai \textit{test} di prendere in \textit{input} il risultato dei \textit{test} eseguiti in precedenza.
 
 \subsection{Persistenza}
 \noindent
-In questa sezione spiego i servizi utilizzati per implementare uno storico dei test che conservi anche i risultati di quest'ultimi.
+In questa sezione spiego i servizi utilizzati per implementare uno storico dei \textit{test} che conservi anche i risultati di quest'ultimi.
 Descriverò il \textit{service} addetto alla persistenza e il \textit{pattern repository} che interagisce con il \textit{database SQLite}, motivando la scelta di quest'ultimo rispetto a un tradizionale \textit{DBMS}.
 
-\subsection{ \textit{API} }\label{dev:api}
+\subsection{API}\label{dev:api}
 \noindent
 In questa sezione spiego gli \textit{endpoint} messi a disposizione dall'\textit{API} implementata per accedere ai servizi del \textit{framework}.
 
-\subsection{ \textit{Frontend} }
+\subsection{\textit{Frontend} }
 \noindent
 In questa sezione spiego il ruolo del \textit{frontend} come applicazione dimostrativa.
 È un punto un po' fuorviante, in quanto il senso del frontend è quello di dimostrare l'estendibilità del progetto ad altre componenti che non abbiano diretto accesso alla logica interna del \textit{framework}.
