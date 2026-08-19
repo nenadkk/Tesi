@@ -1,5 +1,3 @@
-Non vanno in corsivo i nomi propri(anche di tecnologie) e gli acronimi.
-
 embedded
 hardware
 software
@@ -24,11 +22,11 @@ smart working
 suite
 open source
 tools
-assembly
+tool
 interrupt
 RAM
 kilobyte
-garbage collector 
+garbage collector
 overhead
 memory safety
 undefined
@@ -47,3 +45,14 @@ repository
 build
 input
 release
+wearable
+stakeholder
+Proof of Concept
+bus
+broadcast
+custom
+deployment
+runner
+test runner
+script
+refactoring

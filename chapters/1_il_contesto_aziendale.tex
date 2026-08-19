@@ -17,7 +17,7 @@ Si integrano solitamente in sistemi più ampi e complessi, che possono coinvolge
 Bluewind si occupa sia dello sviluppo di prodotti \textit{software} per aziende nell'ambito industriale, medico e dell'\textit{automotive}, sia di fornire ad altre aziende servizi nell'ambito della sicurezza informatica e della \gls{func_saf_g} (quest'ultima verrà approfondita più nel dettaglio nel \hyperlink{ref:spiegazione_fun_saf}{quarto paragrafo} di questa sezione).\\
 
 \noindent
-Dal punto di vista dello sviluppo \textit{software}, gli anni di esperienza nel settore hanno permesso all'azienda di accumulare un bagaglio di conoscenze e competenze che, ad oggi, gli permette di occuparsi dell'intero ciclo di vita di un prodotto.
+Dal punto di vista dello sviluppo \textit{software}, gli anni di esperienza nel settore hanno permesso all'azienda di accumulare un bagaglio di conoscenze e competenze che, a oggi, gli permette di occuparsi dell'intero ciclo di vita di un prodotto.
 L'azienda infatti non si occupa solo dell'implementazione del codice ma è coinvolta in tutti gli stadi del progetto:
 \begin{itemize}
     \itemsep0em
@@ -32,10 +32,10 @@ Occorre tuttavia sottolineare che, in base alle richieste e necessità dei clien
 
 \hypertarget{ref:spiegazione_fun_saf}{}
 \noindent
-Un'aspetto molto importante del settore in cui opera Bluewind è la presenza, per molti campi di utilizzo dei prodotti \textit{embedded}, di normative e \textit{standard} da rispettare per soddisfare i requisiti di sicurezza di alcuni settori critici.
-Per questo motivo Bluewind ha raccolto al suo interno una significativa conoscenza sulla \textit{functional safety}, arrivando ad offrire servizi di consulenza e di validazione su questo tema ad aziende terze, e riuscendo a fare di questo ambito uno dei suoi principali punti di forza e competitività.\\
-La disciplina della \textit{functional safety} si occupa di garantire che un sistema si comporti in maniera prevedibile e che eventuali errori non portino al rischo di provocare danni.\\
-Un caso pratico che si può prendere in esempio, per dimostrarne l'importanza, è un impianto con vari macchinari ed componenti automatizzati e in movimento, all'interno del quale possono essere presenti degli operatori.
+Un aspetto molto importante del settore in cui opera Bluewind è la presenza, per molti campi di utilizzo dei prodotti \textit{embedded}, di normative e \textit{standard} da rispettare per soddisfare i requisiti di sicurezza di alcuni settori critici.
+Per questo motivo Bluewind ha raccolto al suo interno una significativa conoscenza sulla \textit{functional safety}, arrivando a offrire servizi di consulenza e di validazione su questo tema ad aziende terze, e riuscendo a fare di questo ambito uno dei suoi principali punti di forza e competitività.\\
+La disciplina della \textit{functional safety} si occupa di garantire che un sistema si comporti in maniera prevedibile e che eventuali errori non portino al rischio di provocare danni.\\
+Un caso pratico che si può prendere in esempio, per dimostrarne l'importanza, è quello di un impianto con vari macchinari ed componenti automatizzati e in movimento, all'interno del quale possono essere presenti degli operatori.
 In questo caso è fondamentale che il comportamento di tutte le componenti dell'impianto sia prevedibile, e che anche nell'eventualità di un un errore \textit{software}, o guasto \textit{hardware}, non si arrivi a una situazione di rischio che possa provocare dei danni a persone o cose.\\
 Questo è quindi un aspetto molto importante, e necessita che i requisiti delle norme e degli \textit{standard} tecnici vengano considerati all'interno del ciclo di vita di un prodotto fin dall'inizio.\\
 Per accertare che durante la progettazione e lo sviluppo siano stati seguiti tali vincoli ci si affida a degli enti certificatori, che fanno una revisione della documentazione relativa al progetto e valutano che poi tutto sia coerente.
@@ -100,9 +100,6 @@ Nella stessa maniera viene gestito anche un eventuale piano di manutenzione e ag
 A questo metodo di gestione del lavoro si legano poi anche altri processi aziendali, che non necessariamente sono coinvolti direttamente nell'evoluzione del prodotto, ma hanno la loro significativa rilevanza sia nella visione del progetto come sua intero, sia a livello di organizzazione aziendale.
 
 \section{I clienti}
-\iffalse
-In questa sezione descrivo il tipo di clientela a cui si interfaccia l'azienda, descrivendo i diversi tipi di relazione azienda-cliente che ci possono essere.
-\fi
 \noindent
 Occupandosi di sistemi \textit{embedded}, i domini applicativi dei prodotti e dei servizi di Bluewind spaziano in molteplici mercati.
 Tra i suoi clienti una buona maggioranza arriva dai settori dell'\textit{automotive}, dell'automazione industriale, dei sistemi di domotica e dell'elettronica di consumo.\\\\
@@ -171,10 +168,10 @@ La possibilità di associare documentazione direttamente al codice di interesse 
 \subsection{Il linguaggio C}
 \noindent
 Il linguaggio C rimane il linguaggio dominante nel settore \textit{embedded}, in quanto offre un controllo quasi diretto sull'\textit{hardware} (registri, memoria, \textit{interrupt}) mantenendo comunque un livello di astrazione superiore all'Assembly.
-Su microcontrollori con risorse limitate (specialmente in termini di memoria, si parla anche pochi \textit{kilobyte} di \textit{RAM}) non c'è modo di adottare linguaggi più moderni con funzionalità più complesse come il \textit{garbage collector} o l'\textit{overhead}, occorre invece qualcosa che offrà prevedibilità nei tempi di esecuzione e controllo esplicito sull'allocazione.
+Su microcontrollori con risorse limitate (specialmente in termini di memoria, si parla anche pochi \textit{kilobyte} di \textit{RAM}) non c'è modo di adottare linguaggi più moderni con funzionalità più complesse come il \textit{garbage collector} o l'\textit{overhead}, occorre invece qualcosa che offra prevedibilità nei tempi di esecuzione e controllo esplicito sull'allocazione.
 Su questo tema il linguaggio C rimane ancora oggi il punto di riferimento per il settore.
 Va detto però che questo controllo è anche notoriamente il suo punto debole: niente \textit{memory safety} nativa, puntatori pericolosi, comportamenti \textit{undefined} sono rischi che negli ambiti \textit{safety-critical} (come quello \textit{automotive}, o medico) vanno trattati con assoluto riguardo.\\
-Nel capitolo successivo parlerò più a fondo delle regole \gls{misra} che rappresentano un'importante \textit{standard} per limitare gli errori più comuni.
+Nel capitolo successivo parlerò più a fondo delle regole \gls{misra} che rappresentano un importante \textit{standard} per limitare gli errori più comuni.
 
 \subsection{Il linguaggio Assembly}
 \noindent
