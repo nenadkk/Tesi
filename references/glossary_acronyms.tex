@@ -50,6 +50,20 @@
     sort={Machine learning},
     description={Branca dell'intelligenza artificiale che studia algoritmi capaci di apprendere \textit{pattern} dai dati, migliorando le proprie prestazioni su un compito senza essere esplicitamente programmati per eseguirlo}
 }
+\newglossaryentry{isotp_g}{
+    name={ISO-TP / ISO 15765-2},
+    text={IsoTp},
+    sort={IsoTp},
+    description={Protocollo di livello trasporto definito dallo \textit{standard} ISO 15765-2, usato principalmente nel settore \textit{automotive} per trasmettere messaggi su \textit{bus} CAN.
+    Poiché i \textit{frame} CAN \textit{standard} hanno un \textit{payload} limitato a 8 \textit{byte}, ISO-TP permette di segmentare messaggi più grandi in più \textit{frame} e di riassemblarli a destinazione, gestendo anche il controllo di flusso tra trasmettitore e ricevitore}
+}
+\newglossaryentry{modbus_g}{
+    name={Modbus},
+    text={Modbus},
+    sort={Modbus},
+    description={Protocollo di comunicazione sviluppato originariamente per l'automazione industriale, basato su un'architettura \textit{master/slave}.
+    Permette a un dispositivo \textit{master} di leggere e scrivere dati (registri, \textit{coil}, ingressi digitali/analogici) su uno o più dispositivi \textit{slave} tramite richieste e risposte strutturate in un formato semplice e aperto}
+}
 %####################################################################################
 % ELENCO ACRONIMI
 %####################################################################################
@@ -73,6 +87,10 @@
 \glsunset{can}
 \newacronym{api}{API}{Application Programming Interface}
 \glsunset{api}
+\newacronym{uds}{UDS}{Unified Diagnostic Services}
+\newacronym{uart}{UART}{Universal Asynchronous Receiver-Transmitter}
+\glsunset{uart}
+
 %####################################################################################
 % GLOSSARIO ESTESO DEGLI ACRONIMI
 %####################################################################################
@@ -130,5 +148,20 @@
     name={API},
     text={API},
     sort={API},
-    description={Interfaccia che mette a disposizione una serie di servizi tramite cui componenti \textit{software} distinti possono comunicare e scambiarsi dati, senza necessità di conoscere i dettagli implementativi reciproci.}
+    description={Interfaccia che mette a disposizione una serie di servizi tramite cui componenti \textit{software} distinti possono comunicare e scambiarsi dati, senza necessità di conoscere i dettagli implementativi reciproci}
+}
+\newglossaryentry{uds_ext}{
+    name={UDS (Unified Diagnostic Services)},
+    text={UDS},
+    sort={UDS},
+    description={Anche conosciuto come ISO 14229, è un protocollo a livello applicativo usato nel settore \textit{automotive} per la comunicazione diagnostica tra un \textit{tool} esterno e le centraline elettroniche (ECU) di un veicolo.
+    Definisce un insieme di servizi identificati da codici esadecimali scambiati tramite richieste e risposte strutturate.
+    UDS si appoggia tipicamente a protocolli di trasporto come ISO-TP (ISO 15765-2) per la trasmissione dei messaggi su \textit{bus} CAN}
+}
+\newglossaryentry{uart_ext}{
+    name={UART (Universal Asynchronous Receiver-Transmitter)},
+    text={UART},
+    sort={UART},
+    description={Periferica \textit{hardware} per la comunicazione seriale asincrona punto-punto, ampiamente usata nei sistemi \textit{embedded}.
+    Trasmette dati \textit{bit} per \textit{bit} su due linee separate, sincronizzandosi tramite \textit{bit} di \textit{start/stop} e una velocità di trasmissione (\textit{baud rate}) concordata a priori tra i due dispositivi}
 }

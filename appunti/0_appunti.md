@@ -97,22 +97,4 @@ Il test sidDiscovery si riferisce ai testi disponibili nella sessione-livello au
 
 
 # DOMANDE
-- Cosa usare per condividere le nuove versioni della tesi? Devo mandare una mail ogni volta?
-
-- Durante la stesura devo versionare la tesi? x.x?
-
-- Posso usare l'IA per creare immagini?
-
 - Quanto spazio do alle immagini dell'UML
-
-- Riguardo ai titoli:
-  - vanno bene?
-  - posso mettere "metodo di lavoro" nel cap 2 invece che nel 3 ?
-  - posso aggiungere "cose da migliorare"?
-  - l'elenco dei titoli deve essere definitivo? perché nel capitolo 1 potrebbe essere necessario aggiungere delle sottosezioni
-  - Una volta concluso e approvato un capitolo, c'è modo di modificarlo dopo?
-
-- il riassunto per ogni capitolo/sezione che preannuncio cosa andrò a trattare si tiene dopo? o è solo una cosa momentanea per spiegare i titoli finché non li ho scritti
-- L'indice delle figure e delle tabelle va alla fine o all'inizio?
-- devo usare verbi in modo attivo/personale o passivo/impersonale? 
-- posso mettere la citazione a ranzato?

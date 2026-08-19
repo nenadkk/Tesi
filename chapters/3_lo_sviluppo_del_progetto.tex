@@ -1,12 +1,11 @@
 \chapter{Lo sviluppo del progetto}
-\label{chap:descrizione-stage}
+\label{chap:sviluppo-progetto}
 \noindent
 In questo capitolo parlo del progetto in se e per se, analizzando il problema che mi è stato posto e come ho deciso di risolverlo.
 Vado poi a fare un resoconto finale sul prodotto ottenuto e ne valuto la qualità.
 
 \section{La metodologia e le tecnologie}
 \subsection{Il metodo di lavoro}
-% In questo punto parlo del metodo di lavoro che ho adottato durante l'attività di \textit{stage} per organizzare il lavoro e confrontarmi con il mi tutor.
 \noindent
 All'inizio della mia collaborazione con l'azienda, ho stilato, insieme al mio \textit{tutor} aziendale, un piano di lavoro per lo \textit{stage} che sarei andato a svolgere.
 Tale documento contiene una suddivisione delle attività previste per ognuna delle otto settimane della mia permanenza in azienda.\\
@@ -34,10 +33,79 @@ Questa stretta interazione ci permetteva sia di rimanere sempre allineati sullo 
 
 
 \subsection{Le tecnologie utilizzate}
-% In questo punto descrivo quali tecnologie e strumenti (\textit{software} e \textit{hardware}) ho utilizzato per la progettazione e sviluppo del progetto.
 \noindent
+Per la realizzazione di questo progetto ho usufruito di un notevole numero di tecnologie, dai linguaggi di programmazione, ai protocolli di comunicazione, fino ad arrivare a IDE e \textit{hardware}  proprietari, specifici per lo sviluppo \textit{embedded}.
 
-\section{Analisi}
+\subsubsection{Linguaggi e \textit{framework}}
+\begin{itemize}
+	\itemsep0em
+	\item \textbf{Linguaggio Python} : linguaggio di programmazione ad alto livello, noto per la sua versatilità in numerosi ambiti e casi d'uso.
+	La scelta di utilizzare Python come linguaggio principale per questo progetto risiede nella presenza di diverse librerie, già collaudate, per l'implementazione dei vari protocolli di comunicazione che vengono usati nel progetto.
+	\item \textbf{Linguaggio C} : linguaggio di programmazione a basso livello, usato comunemente nello sviluppo \textit{embedded}(già introdotto nel punto \ref{tec:lang-c}).
+	Il linguaggio C è stato necessario per sviluppare il \textit{firmware} di una delle schede in modo che potesse rispondere alle richieste inviate dal programma principale.
+	\item \textbf{FastAPI} : \textit{framework} per la realizzazione di API in Python.
+	Conosciuto per le sue prestazione apprezzabili e per la semplicità di adozione.
+	Ne consegue che l'ho scelto per l'implementazione dell'API all'interno del progetto.
+	Comodo soprattutto perché riconosce automaticamente gli \textit{endpoint} e, senza il bisogno di un intervento diretto del programmatore, mette a disposizione un'interfaccia per inviare richieste.
+	\item \textbf{Svelte} : \textit{framework} gratuito e \textit{open source} per lo sviluppo di applicazioni \textit{web} per il \textit{frontend}.
+	Comprende un compilatore che trasforma il codice Svelte in codice JavaScript, in modo che possa essere eseguito sui \textit{browser}.
+	Ho deciso di scegliere questo \textit{framework} per sviluppare l'interfaccia grafica più per una questione di semplicità.
+	La componente \textit{frontend} non è mai stata considerata centrale all'interno del progetto, avendo uno scopo più dimostrativo che funzionale.
+	Ho deciso quindi di premiare un \textit{framework} che avesse come punto di forza la facilità di adozione.
+\end{itemize}
+
+\subsubsection{Protocolli}
+\noindent
+Come verrà spiegato più avanti in questa sezione (sottosezione \ref{tec:hardware}), sono state utilizzate due schede diverse come \textit{target} per i \textit{test} eseguiti.
+Questo perché non tutti gli attacchi potevano venire effettuati attraverso lo stesso canale di comunicazione.
+Si è reso necessario dunque l'utilizzo di due schede separate, che supportassero ognuna un diverso tipo di comunicazione.
+\\\\
+\noindent
+Il primo tipo di comunicazione, nonché quello più complesso, era costituito dal seguente insieme di protocolli:
+
+\begin{itemize}
+	\item \textbf{CAN \textit{Bus}} : Il CAN \textit{Bus}, o ISO-11898, è un protocollo di comunicazione seriale, sviluppato per consentire lo scambio di informazioni tra unità di controllo elettroniche all’interno di un sistema complesso.
+	È largamente usato nel settore \textit{automotive} per mettere in comunicazione le varie componenti elettroniche che sono presenti all'interno di un veicolo.
+	Per questo progetto, il CAN \textit{Bus} sarà il protocollo alla base della comunicazione con una delle due schede usate come bersagli dei \textit{test}.
+	\item \textbf{\gls{isotp_g}} : ISO-15765-2, è un protocollo di trasporto che permette di inviare messaggi tramite comunicazione CAN eliminando il vincolo iniziale di avere al massimo messaggi di otto \textit{byte}.
+	Il messaggio iniziale viene diviso in più pezzi, ai quali vengono aggiunti dei metadati che permettano poi di ricostruire il messaggio una volta ricevuto.
+	\item \textbf{\gls{uds}} : è un protocollo di comunicazione utilizzato nel settore \textit{automotive} per comunicare con le centraline (ECU) presenti sui veicoli.
+	Attraverso dei codici esadecimali è possibile intervenire sulla centralina, richiedendo informazioni, lanciando comandi o aggiornandone il \textit{firmware}.
+	Una grossa parte degli attacchi sviluppati saranno rivolti proprio a verificare quali risorse e funzionalità sono accessibili tramite la comunicazione instaurata (parlerò più a fondo dei tipi di attacchi nella sezione \ref{sec:analisi} - Analisi).
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth]{img/UDS-ISO-OSI.png}}
+    \caption{\centering Schema che rappresenta i protocolli utilizzati per la comunicazione CAN all'interno della pila ISO-OSI.}
+    \vspace{0.1cm}
+    {\footnotesize Fonte: Elaborazione originale dell'autore, basata sullo schema fornito dal sito \href{https://www.csselectronics.com/cdn/shop/files/UDS-Unified-Diagnostic-Services-OSI-Model-7-Layer.svg}{CSS Electronict}\par}
+\end{figure}
+
+\\\\
+\noindent
+La seconda comunicazione è invece effettuata tramite protocollo \gls{modbus_g}, un protocollo di comunicazione molto comune nel settore industriale che permette di andare a leggere e scrivere le risorse dei dispositivi (chiamati \textit{slave}) all'interno di un sistema.
+È un protocollo ampiamente adottato soprattutto per via della sua semplice implementazione e manutenzione.
+Può tuttavia nascondere falle di sicurezza, lasciando libero accesso a risorse sensibili, che non dovrebbero poter essere accessibili da chiunque.
+Questa sua caratteristica l'ha reso un bersaglio di interesse per questo progetto.\\
+A differenza della prima comunicazione, la quale utilizza un'interfaccia fisica supportata dal CAN per inviare i messaggi, questo canale trasmetterà i messaggi tramite una periferica \gls{uart}, la quale mette a disposizione una comunicazione seriale per l'invio e il ricevimento dei dati.
+
+
+\subsubsection{Schede \textit{hardware}} \label{tec:hardware}
+\begin{itemize}
+	\item \textbf{Infineon Aurix TC375 Lite Kit}
+	\item \textbf{ST Nucleo-H533RE}
+\end{itemize}
+
+\subsubsection{Strumenti proprietari esterni}
+\begin{itemize}
+	\item \textbf{STM32cubeIDE}
+	\item \textbf{STM32cubeMx}
+\end{itemize}
+
+
+
+\section{Analisi} \label{sec:analisi}
 % In questa sezione spiego il problema che sono andato ad affrontare e spiego la teoria che ci sta dietro.
 % Nel particolare parlo dei principali protocolli utilizzati, spingendomi nel dettaglio quanto basta perché si possa comprendere più facilmente le sezioni successive.
 % Oltre a ciò spiegherò la teoria che sta dietro i \textit{test} implementati, motivando il loro scopo in relazione all'obiettivo del progetto.
@@ -49,11 +117,11 @@ Questa stretta interazione ci permetteva sia di rimanere sempre allineati sullo 
 % Breve sezione di introduzione sull'architettura del progetto nel suo complesso.
 \noindent
 
-\subsection{Le classi `Target'}
+\subsection{Le classi `\textit{Target}'}
 % In questa sezione spiego come ho rappresentato i dispositivi \textit{target} sui quali verranno lanciati i controlli di sicurezza.
 \noindent
 
-\subsection{Le classi `Test'} \label{dev:classi_test}
+\subsection{Le classi `\textit{Test}'} \label{dev:classi_test}
 \noindent
 In questa sezione spiego come ho rappresentato i \textit{test} da lanciare, partendo dai moduli che mi sono stati forniti e sui quali ho effettuato il \textit{refactoring}.
 Questa parte riprende diversi concetti di §3.3, o per meglio dire ne rappresenta l'applicazione concreta all'interno del progetto.
@@ -76,7 +144,7 @@ In questa sezione spiego gli \textit{endpoint} messi a disposizione dall'\textit
 \subsection{\textit{Frontend} }
 \noindent
 In questa sezione spiego il ruolo del \textit{frontend} come applicazione dimostrativa.
-È un punto un po' fuorviante, in quanto il senso del frontend è dimostrare l'estendibilità del progetto ad altre componenti che non abbiano diretto accesso alla logica interna del \textit{framework}.
+È un punto un po' fuorviante, in quanto il senso del \textit{frontend} è dimostrare l'estendibilità del progetto ad altre componenti che non abbiano diretto accesso alla logica interna del \textit{framework}.
 
 \section{Programmazione}
 \noindent

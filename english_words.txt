@@ -56,3 +56,18 @@ runner
 test runner
 script
 refactoring
+firmware
+endpoint
+frontend
+backend
+web
+browser
+byte
+target
+frame
+payload
+bit
+baud rate
+master
+slave
+coil
