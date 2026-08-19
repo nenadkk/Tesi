@@ -54,7 +54,7 @@ Delle linee guida esistono anche per quanto riguarda la più generale elettronic
 A fare da rifermento per tale settore è lo \textit{standard} ETSI EN 303645; di adozione inizialmente europea, è finito per diventare il fondamento per la sicurezza dei dispositivi \gls{IoT}, anche a livello globale.\\\\
 A differenza dei regolamenti visti in precedenza, questo \textit{standard} si concentra sul risultato delle misure intraprese e non sulla loro implementazione.
 Questo avviene con l'intendo di dare maggiore flessibilità alle organizzazioni, in modo che esse possano studiare, e migliorare, delle soluzioni che siano il più appropriate possibile per i loro prodotti.\\\\
-Inoltre, l'intento non è quello di assicurare la protezione da tutti i rischi possibili, ma di tracciare una linea di partenza, un livello base, di sicurezza che possa evitare le vulnerabilità più comuni.
+Inoltre, l'intento non è assicurare la protezione da tutti i rischi possibili, ma di tracciare una linea di partenza, un livello base, di sicurezza che possa evitare le vulnerabilità più comuni.
 Si prevede perciò che questo \textit{standard} venga completato con l'adozione di altri \textit{standard} aggiuntivi, che prevedano l'adozione di misure più specifiche, pertinenti a quelli che sono gli obiettivi finali del progetto.
 
 \subsection{Regole MISRA}
@@ -67,7 +67,7 @@ Il linguaggio C concede una significativa libertà di azione agli sviluppatori, 
 Specialmente in applicazioni che interagiscono con componenti esterne, la presenza di tali rischi non è accettabile.
 \\
 Le regole MISRA limitano quindi il linguaggio C, restringendone in un certo senso le funzionalità.
-L'obiettivo è quello di eliminare la possibilità che si verifichino comportamenti inattesi, e di promuovere la scrittura di codice più facilmente mantenibile.
+L'obiettivo è eliminare la possibilità che si verifichino comportamenti inattesi, e di promuovere la scrittura di codice più facilmente mantenibile.
 
 
 
@@ -79,13 +79,13 @@ L'obiettivo è quello di eliminare la possibilità che si verifichino comportame
 In questa sezione parlo del progetto propostomi, da cosa nasce questa necessità e quale ruolo può avere all'interno del contesto aziendale.
 \fi
 \noindent
-La crescente quantità di vincoli che i produttori sono tenuti a rispettare ha dato origine, all'interno di \azienda{}, all'esigenza di formulare delle strategie che contengano questo incremento di complessità.
+La crescente quantità di vincoli che i produttori sono tenuti a rispettare ha dato origine, all'interno di Bluewind, all'esigenza di formulare delle strategie che contengano questo incremento di complessità.
 Quest'esigenza si estende sia sulla questione burocratica e amministrativa dei progetti, sia sullo sviluppo.
 Viene infatti chiesto alle aziende di provare la corretta implementazione delle misure di sicurezza richieste, attraverso \textit{test} oggettivi e ripetibili.\\
 
 \noindent
-Per cercare delle soluzioni che facilitino questo compito, \azienda{} ha ideato l'attività di tirocinio del quale mi sono andato a occupare.\\
-Lo scopo di questo tirocinio è stato quello di progettare e prototipare un \textit{framework} di \textit{test} di sicurezza informatica, incentrato nello specifico sulla verifica di dispositivi \textit{embedded}.
+Per cercare delle soluzioni che facilitino questo compito, Bluewind ha ideato l'attività di tirocinio del quale mi sono andato a occupare.\\
+Lo scopo di questo tirocinio è stato progettare e prototipare un \textit{framework} di \textit{test} di sicurezza informatica, incentrato nello specifico sulla verifica di dispositivi \textit{embedded}.
 Il progetto prevedeva l'implementazione concreta di \textit{test} di sicurezza che rappresentassero dei scenari di utilizzo improprio, e che quindi potessero fornire informazioni sulla robustezza del prodotto.\\
 Oltre a ciò, due punti indicati come di particolare interesse da quest'attività sono stati: l'esecuzione su \textit{hardware} reale dei \textit{test}, e la possibilità di avviare tale esecuzione da remoto.
 
@@ -98,7 +98,7 @@ Oltre a ciò, due punti indicati come di particolare interesse da quest'attivit�
 
 
 
-\section{Gli obiettivi del progetto}
+\section{Gli obiettivi del progetto} \label{ob-progetto}
 \iffalse
 In questa sezione descrivo gli obiettivi prefissati con l'azienda da raggiungere durante l'attività di tirocinio.
 \fi
@@ -145,7 +145,7 @@ Seguono i suddetti obiettivi:
 	Ho poi deciso, insieme al \textit{tutor}, che l'applicazione sarebbe stata rappresentata dall'API stessa.
 \end{itemize}
 
-\subsection{Obiettivi facoltativi}
+\subsection{Obiettivi facoltativi} \label{ob-facoltativi}
 \noindent
 Sono stati previsti anche degli obiettivi facoltativi a cui dedicarsi qualora, una volta soddisfatti tutti gli obiettivi obbligatori e desiderati, fosse rimasto del tempo a disposizione.
 Tali obiettivi sono lo sviluppo di una interfaccia grafica da cui lanciare i \textit{test}, e lo sviluppo di ulteriori \textit{test} aggiuntivi che si basino su altri protocolli di comunicazione, diversi dal CAN.\\
@@ -167,7 +167,7 @@ Oltre a ciò specificherò quali sono gli obiettivi personali che mi sono posto 
 Nel valutare le proposte di tirocinio che ci sono state presentate, ho deciso di concentrarmi su pochi criteri ma ai quali ho inteso attenermi fermamente.\\
 
 \noindent
-Il mio intento principale era quello di andare a lavorare a un progetto, e in una realtà, che avesse una forte affinità con l'ambito \textit{embedded}.
+Il mio intento principale era andare a lavorare a un progetto, e in una realtà, che avesse una forte affinità con l'ambito \textit{embedded}.
 Nel corso della mia carriera di studi ho avuto modo di mettere mano a diversi linguaggi di programmazione ad alto livello, e di conseguenza la mia esperienza si è concentrata prevalentemente su progetti orientati all'utente finale, quali applicazioni e siti web.
 Molto raramente mi sono invece interfacciato all'ambito della programmazione a basso livello, e in quelle poche occasioni non sono comunque mai riuscito a lavorare su applicazioni che non fossero puramente teoriche.
 Causa di ciò è in parte anche la scarsa offerta di opportunità, da parte dell'università, per approfondire questo settore, il quale, nonostante tutto, mi ha sempre destato un certo interesse.
@@ -187,8 +187,12 @@ Per dare dimostrazione di ciò, mi sono posto degli obiettivi che mettessero all
 \begin{itemize}
     \itemsep0em
 	\item \textbf{Raggiungere l'autonomia nell'utilizzo delle tecnologie}: mostrare che sono in grado di studiare, apprendere e sfruttare coscientemente le proprietà delle tecnologie con cui lavoro.
-	Questo obiettivo comporta l'avere una completa autonomia nell'utilizzo degli strumenti e tecnologie che occorrono per svolgere il lavoro richiestomi, e pone particolare attenzione sulla mia capacità di trovare autonomamente le informazioni di cui necessito.
-	\item \textbf{Risoluzione consapevole dei problemi}: questo obiettivo si concentra sul mostrare che sono in grado di analizzare i problemi che mi vengono proposti, o che incontro durante il progetto, e trovare ad essi una soluzione adatta e coerente con il resto del progetto.
+	Questo obiettivo comporta l'avere una completa autonomia nell'utilizzo degli strumenti e tecnologie che occorrono per svolgere il lavoro richiestomi, e pone particolare attenzione sulla mia capacità di trovare autonomamente le informazioni di cui necessito.\\
+	Ho deciso di considerare questo obiettivo soddisfatto se nelle ultime settimane di tirocinio riuscirò ad adempiere a tutti i compiti che mi sono posto senza la necessità di chiedere assistenza al mio \textit{tutor}, anche nel caso mi trovassi a dover utilizzare funzionalità degli strumenti delle quali, fino a quel momento, non avevo ancora usufruito.
+	\item \textbf{Risoluzione consapevole dei problemi}: questo obiettivo si concentra sul mostrare che sono in grado di analizzare i problemi che mi vengono proposti, o che incontro durante il progetto, e trovare a essi una soluzione adatta e coerente con il resto del progetto.\\
+	Questo mio obiettivo si lega molto agli obiettivi facoltativi del progetto, esposti nella sezione \ref{ob-facoltativi}.
+	Ritengo infatti che mostrare l'estendibilità del progetto, senza sforare i tempi inizialmente definiti, provi che il progetto e le sue parti siano stati pensati e sviluppati tenendo bene conto del loro insieme.
+	Riterrò quindi questo obiettivo soddisfatto se riuscirò a soddisfare tutti gli obiettivi facoltativi nel tempo previsto.
 	\item \textbf{Valorizzare il lavoro svolto}
 	Questo punto prevede la messa in pratica delle conoscenze apprese durante il corso di Ingegneria del \textit{Software}, allo scopo di ottenere il massimo valore possibile dal tempo investito sul lavoro.
 	Ho deciso di utilizzare come metodo di giudizio di questo punto la quantità di obiettivi raggiunti per il progetto.
