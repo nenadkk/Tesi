@@ -91,9 +91,33 @@ A differenza della prima comunicazione, la quale utilizza un'interfaccia fisica 
 
 
 \subsection{Schede \textit{hardware}} \label{tec:hardware}
+\noindent
+Un aspetto di particolare interesse per questo progetto era quello di non limitarsi a ottenere un prodotto che avesse una funzione solo teorica, ma che potesse fin da subito essere applicato alla realtà.
+Per questo motivo mi sono state fornite due schede che ho poi usato sia come obiettivi sui quali eseguire i vari \textit{test}, avendo fin da subito una simulazione realistica dell'utilizzo finale del mio prodotto, sia per verificare che i canali di comunicazione, attraverso i quali venivano mandati i \textit{test}, funzionassero correttamente.\\\\
+\noindent
+Entrambe queste schede vengono prodotte con lo scopo di permettere agli sviluppatori di provare diversi insiemi di componenti elettroniche.
+In questo modo possano capire se tali componenti sono adatte al loro caso di utilizzo, potendo metterci mano prima ancora di realizzare un prodotto \textit{hardware} apposito al loro scopo finale.
+\\\\
+\noindent
+Le schede utilizzate sono:
 \begin{itemize}
-	\item \textbf{Infineon Aurix TC375 Lite Kit}
-	\item \textbf{ST Nucleo-H533RE}
+	\item \textbf{Infineon Aurix TC375 Lite Kit} : ho usato questa scheda per la parte di \textit{test} attraverso la comunicazione con canale CAN
+    	\begin{figure}[H]
+            \centering
+            \makebox[\textwidth][c]{\includegraphics[width=0.5\textwidth]{img/scheda_infineon.png}}
+            \caption{\centering Immagine di una scheda Infineon Aurix TC375 Lite Kit utilizzata durante l'esperienza di tirocinio.}
+            \vspace{0.1cm}
+            {\footnotesize Fonte: Immagine presa dalla presentazione di introduzione del prodotto AURIXTM TC375 Safety
+            Lite Kit, presente sul sito di  \href{https://www.infineon.com/assets/row/public/documents/10/43/infineon-introduction-to-aurix-tc375-safety-lite-kit-presentations-en.pdf}{Infineon}\par}
+    	\end{figure}
+	\item \textbf{ST Nucleo-H533RE} : ho usato questa scheda per la parte di \textit{test} attraverso la comunicazione Modbus
+       	\begin{figure}[H]
+            \centering
+            \makebox[\textwidth][c]{\includegraphics[width=0.5\textwidth]{img/scheda_st.png}}
+            \caption{\centering Immagine di una scheda ST Nucleo-H533RE utilizzata durante l'esperienza di tirocinio.}
+            \vspace{0.1cm}
+            {\footnotesize Fonte: Immagine presa dalla   \href{https://www.st.com/bin/ecommerce/api/image.PF274587.en.feature-description-include-personalized-no-cpn-large.jpg}{pagina della scheda sul sito di ST}\par}
+       	\end{figure}
 \end{itemize}
 
 
@@ -101,8 +125,12 @@ A differenza della prima comunicazione, la quale utilizza un'interfaccia fisica 
 
 \subsection{Strumenti proprietari esterni}
 \begin{itemize}
-	\item \textbf{STM32cubeIDE}
-	\item \textbf{STM32cubeMx}
+	\item \textbf{STM32cubeMx} : \textit{tool} grafico che ha lo scopo di semplificare la configurazione dei prodotti STM32.
+	Permette inoltre di scaricare dei progetti già collaudati contenenti esempi di utilizzo della scheda.
+
+\item \textbf{STM32cubeIDE} : ambiente di sviluppo per la scrittura, compilazione e \textit{debugging} del codice per prodotti STM32.
+È possibile utilizzarlo sia per creare progetti C/C++ da zero, sia importando progetti da STM32cubeMx.
+Ho usato questo IDE per lo sviluppo del \textit{firmware} della scheda ST Nucleo-H533RE.
 \end{itemize}
 
 
@@ -130,7 +158,7 @@ Questa parte riprende diversi concetti di §3.3, o per meglio dire ne rappresent
 
 \subsection{Creazione ed esecuzione}
 \noindent
-In questa sezione spiego i servizi che si occupano della creazione e l'esecuzione delle classi di test.
+In questa sezione spiego i servizi che si occupano della creazione e l'esecuzione delle classi di \textit{test}.
 La creazione comprende una classe \textit{factory} e un \textit{pattern registry}; l'esecuzione comprende un \textit{service} per l'esecuzione del singolo \textit{test} e un altro per la gestione di più \textit{test} eseguiti in serie.
 In merito a quest'ultimo parlerò anche della soluzione adottata per tenere traccia del \textit{context} che permette ai \textit{test} di prendere in \textit{input} il risultato dei \textit{test} eseguiti in precedenza.
 

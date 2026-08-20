@@ -71,3 +71,4 @@ baud rate
 master
 slave
 coil
+debugging
