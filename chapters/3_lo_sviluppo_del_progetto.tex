@@ -4,8 +4,7 @@
 In questo capitolo parlo del progetto in se e per se, analizzando il problema che mi è stato posto e come ho deciso di risolverlo.
 Vado poi a fare un resoconto finale sul prodotto ottenuto e ne valuto la qualità.
 
-\section{La metodologia e le tecnologie}
-\subsection{Il metodo di lavoro}
+\section{Il metodo di lavoro}
 \noindent
 All'inizio della mia collaborazione con l'azienda, ho stilato, insieme al mio \textit{tutor} aziendale, un piano di lavoro per lo \textit{stage} che sarei andato a svolgere.
 Tale documento contiene una suddivisione delle attività previste per ognuna delle otto settimane della mia permanenza in azienda.\\
@@ -32,11 +31,11 @@ Oltre a questo resoconto settimanale, si aggiungevano le interazioni quotidiane 
 Questa stretta interazione ci permetteva sia di rimanere sempre allineati sullo stato del progetto, sia di affrontare eventuali problematiche sul nascere.
 
 
-\subsection{Le tecnologie utilizzate}
+\section{Le tecnologie utilizzate}
 \noindent
 Per la realizzazione di questo progetto ho usufruito di un notevole numero di tecnologie, dai linguaggi di programmazione, ai protocolli di comunicazione, fino ad arrivare a IDE e \textit{hardware}  proprietari, specifici per lo sviluppo \textit{embedded}.
 
-\subsubsection{Linguaggi e \textit{framework}}
+\subsection{Linguaggi e \textit{framework}}
 \begin{itemize}
 	\itemsep0em
 	\item \textbf{Linguaggio Python} : linguaggio di programmazione ad alto livello, noto per la sua versatilità in numerosi ambiti e casi d'uso.
@@ -54,7 +53,7 @@ Per la realizzazione di questo progetto ho usufruito di un notevole numero di te
 	Ho deciso quindi di premiare un \textit{framework} che avesse come punto di forza la facilità di adozione.
 \end{itemize}
 
-\subsubsection{Protocolli}
+\subsection{Protocolli}
 \noindent
 Come verrà spiegato più avanti in questa sezione (sottosezione \ref{tec:hardware}), sono state utilizzate due schede diverse come \textit{target} per i \textit{test} eseguiti.
 Questo perché non tutti gli attacchi potevano venire effettuati attraverso lo stesso canale di comunicazione.
@@ -91,13 +90,13 @@ Questa sua caratteristica l'ha reso un bersaglio di interesse per questo progett
 A differenza della prima comunicazione, la quale utilizza un'interfaccia fisica supportata dal CAN per inviare i messaggi, questo canale trasmetterà i messaggi tramite una periferica \gls{uart}, la quale mette a disposizione una comunicazione seriale per l'invio e il ricevimento dei dati.
 
 
-\subsubsection{Schede \textit{hardware}} \label{tec:hardware}
+\subsection{Schede \textit{hardware}} \label{tec:hardware}
 \begin{itemize}
 	\item \textbf{Infineon Aurix TC375 Lite Kit}
 	\item \textbf{ST Nucleo-H533RE}
 \end{itemize}
 
-\subsubsection{Strumenti proprietari esterni}
+\subsection{Strumenti proprietari esterni}
 \begin{itemize}
 	\item \textbf{STM32cubeIDE}
 	\item \textbf{STM32cubeMx}
